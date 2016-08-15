@@ -27,5 +27,8 @@
     <ClInclude Include="BST.h">
       <Filter>Source Files</Filter>
     </ClInclude>
+    <ClInclude Include="Splay.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
