@@ -8,7 +8,9 @@
 英文版懒得写了。
 
 ### 更新
-2016-08-15 1 添加了Splay Tree的相关代码
+2016-08-15 2 添加了BTree的相关代码
+
+2016-08-15 1 添加了Splay Tree的相关代码(在BST Project中)
 
 2016-08-14 创建仓库，有List、Graph、Fibonacci、BinTree、BST(到splay tree之前)
 [清华大学出版社网站]:http://dsa.cs.tsinghua.edu.cn/~deng/ds/dsacpp/
