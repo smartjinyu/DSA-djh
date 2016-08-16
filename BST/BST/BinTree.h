@@ -208,7 +208,3 @@ void travPost_I(BinNodePosi(T) x, VST& visit) {
 		x = S.pop(); visit(x->data);
 	}
 }
-
-int main() {
-	return 0;
-}
