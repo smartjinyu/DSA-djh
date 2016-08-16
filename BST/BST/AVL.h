@@ -23,7 +23,7 @@ template<typename T>
 BinNodePosi(T) AVL<T>::insert(const T& e) {
 	BinNodePosi(T)& x = search(e);
 	if (x)return x;//确保x不存在
-	x = new BinNode(e, _hot); _size++;//此处可能导致祖父及祖父以上失衡
+	BinNodePosi(T) xx = new BinNode(e, _hot); _size++;//此处可能导致祖父及祖父以上失衡
 	for (BinNodePosi(T) g = _hot; g; g = g->parent) {//从x的父亲开始逐层向上检查历代祖先
 		if (!AvlBalanced(*g)) {
 			FromParentTo(*g) = rotateAt(tallerChild(tallerChild(g)));//将子树连至原父亲
@@ -32,7 +32,7 @@ BinNodePosi(T) AVL<T>::insert(const T& e) {
 		else
 			updateHeight(g);//若g未失衡，更新其高度即可
 	}//至多一次调整后，全树重新平衡，高度复原
-	return x;
+	return xx;
 }
 
 template<typename T>
@@ -49,13 +49,4 @@ bool AVL<T>::remove(const T& e) {
 	return true;
 }
 
-/*
-* 按照3+4结构对三个顶点四棵子树进行重组，返回重组后局部子树根节点的位置b
-* 子树根节点与上层节点之间的双向连接，均由上层调用者完成
-* 用于AVL和RedBlack的局部平衡调整
-* 中序遍历序列为{T0,a,T1,b,T2,c,T3}转化为
-*                  b
-*             a         c
-*           T0  T1    T2   T3
-*/
 

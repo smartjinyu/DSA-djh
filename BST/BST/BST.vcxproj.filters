@@ -30,5 +30,8 @@
     <ClInclude Include="Splay.h">
       <Filter>Source Files</Filter>
     </ClInclude>
+    <ClInclude Include="RedBlack.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

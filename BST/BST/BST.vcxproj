@@ -150,6 +150,7 @@
     <ClInclude Include="BinNode.h" />
     <ClInclude Include="BinTree.h" />
     <ClInclude Include="BST.h" />
+    <ClInclude Include="RedBlack.h" />
     <ClInclude Include="Splay.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
