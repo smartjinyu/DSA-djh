@@ -1,4 +1,3 @@
-#pragma once
 typedef int Rank;
 #define ListNodePosi(T) ListNode<T>*//列表节点位置
 

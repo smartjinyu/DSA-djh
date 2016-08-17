@@ -16,6 +16,8 @@
 
 ### 更新
 
+2016-08-17 1 添加了Dictionary Project，给出了使用SkipList的实现方式
+
 2016-08-16 2 添加了“树的相关内容总结”博客
 
 2016-08-16 1 添加了RedBlack Tree(在BST Project中)
