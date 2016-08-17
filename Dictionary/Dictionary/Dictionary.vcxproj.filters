@@ -36,5 +36,11 @@
     <ClInclude Include="Quadlist.h">
       <Filter>Source Files</Filter>
     </ClInclude>
+    <ClInclude Include="Hashtable.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Bitmap.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
