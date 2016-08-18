@@ -24,5 +24,14 @@
     <ClInclude Include="PQ_ComplHeap.h">
       <Filter>Source Files</Filter>
     </ClInclude>
+    <ClInclude Include="PQ_LeftHeap.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="BinTree.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="BinNode.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
