@@ -16,6 +16,8 @@
 
 ### 更新
 
+2016-08-19 1 添加了stringMatch Project，给出了蛮力算法(Brutal Force)和KMP算法实现
+
 2016-08-18 2 添加了priority_queue的左式堆实现方式
 
 2016-08-18 1 添加了priority_queue Project，给出了使用完全二叉堆的实现方式
