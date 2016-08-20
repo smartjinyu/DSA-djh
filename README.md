@@ -16,6 +16,8 @@
 
 ### 更新
 
+2016-08-20 1 添加了quickSort的实现
+
 2016-08-19 2 添加了stringMatch的Boyer-Morre算法实现(BC、GS)
 
 2016-08-19 1 添加了stringMatch Project，给出了蛮力算法(Brutal Force)和KMP算法实现

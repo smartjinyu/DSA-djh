@@ -18,6 +18,8 @@ protected:
 	void merge(Rank lo, Rank mi, Rank hi);//归并算法
 	void mergeSort(Rank lo, Rank hi);//归并排序算法
 	Rank partition(Rank lo, Rank hi);//轴点构造算法
+	Rank partitionA(Rank lo, Rank hi);//轴点构造算法
+	Rank partitionB(Rank lo, Rank hi);//轴点构造算法
 	void quickSort(Rank lo, Rank hi);//快速排序算法
 	void heapSort(Rank lo, Rank hi);//堆排序算法
 
@@ -222,6 +224,76 @@ void Vector<T>::merge(Rank lo, Rank mi, Rank hi) {
 	}
 	delete[] B;
 
+}
+
+/*
+L-U-G 满足L<=pivot<=G
+*/
+
+template<typename T>//轴点构造算法，通过调整元素[lo,hi]的轴点，返回其秩
+Rank Vector<T>::partitionA(Rank lo, Rank hi) {//版本A
+	swap(_elem[lo], _elem[lo + rand() % (hi - lo + )]);//随机交换首元素，减小最坏情况发生的概率
+	T pivot = _elem[lo];//备份过后，lo和hi可以视作有一个为空
+	while (lo < hi) {
+		while ((lo < hi) && (pivot <= _elem[hi]))
+			hi--;//向左端拓展G
+		//至此，右端已拓展到极限，_elem[hi] < pivot
+		_elem[lo] = _elem[hi];
+		while ((lo < hi) && (_elem[lo] <= pivot))
+			lo++;//向右端拓展L
+		_elem[hi] = _elem[lo];
+	}
+	_elem[lo] = pivot;
+	return lo;
+}
+
+template<typename T>//轴点构造算法，通过调整元素[lo,hi]的轴点，返回其秩
+Rank Vector<T>::partitionB(Rank lo, Rank hi) {//版本B 勤于交换，懒得拓展，解决所有元素均相同的退化情况,但稳定性更差
+	swap(_elem[lo], _elem[lo + rand() % (hi - lo + )]);//随机交换首元素，减小最坏情况发生的概率
+	T pivot = _elem[lo];//备份过后，lo和hi可以视作有一个为空
+	while (lo < hi) {
+		while (lo < hi) {
+			if (pivot < _elem[hi])
+				hi--;
+			else {
+				_elem[lo++] = _elem[hi];
+				break;
+			}
+		}
+		while (lo < hi) {
+			if (_elem[lo] < pivot) {
+				lo++;
+			}
+			else {
+				_elem[hi--] = _elem[lo];
+				break;
+			}
+		}
+	}
+	_elem[lo] = pivot;
+	return lo;
+}
+/*
+L-G-U 满足L<=pivot<=G
+*/
+template<typename T>
+Rank Vector<T>::partition(Rank lo, Rank hi) {
+	swap(_elem[lo], _elem[lo + rand() % (hi - lo + )]);
+	T pivot = _elem[lo]; int mi = lo;
+	for (int k = lo + 1; k <= hi; k++) {
+		if (_elem[k] < pivot)
+			swap(_elem[++mi], _elem[k]);
+	}
+	swap(_elem[lo], _elem[mi]);//轴点归位
+	return mi;
+}
+template<typename T>
+void Vector<T>::quickSort(Rank lo, Rank hi)
+{
+	if (hi - lo < 2)return;
+	Rank mi = partition(lo, hi - 1);//在[lo,hhi-1]构造轴点
+	quickSort(lo, mi);
+	quickSort(mi + 1, hi);
 }
 
 int main() {
