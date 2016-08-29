@@ -1,2 +1,3 @@
 ﻿  Source.cpp
-  List.vcxproj -> C:\Users\smart\Documents\Visual Studio 2015\Projects\data structures\List\Debug\List.exe
+c:\users\smart\documents\visual studio 2015\projects\data structures\list\list\source.cpp(74): error C2838: 'merge': illegal qualified name in member declaration
+  c:\users\smart\documents\visual studio 2015\projects\data structures\list\list\source.cpp(75): note: see reference to class template instantiation 'List<T>' being compiled
