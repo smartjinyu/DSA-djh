@@ -234,10 +234,9 @@ int List<T>::clear() {
 
 #define maxL 10010
 List<char> str;
-void solve(int n) {
+void solve(int n, ListNodePosi(char) pl) {
 	bool flag = true;
 	int l = n, r = n;
-	ListNodePosi(char) pl = str.visitByRank(n);
 	while (flag) {
 		ListNodePosi(char) p = pl;;
 		ListNodePosi(char) pr = p;
@@ -274,8 +273,7 @@ int main() {
 	int id; char letter;
 	for (int i = 0; i < N; i++) {
 		scanf("%d %c", &id, &letter);
-		str.insertAt(id,letter);
-		solve(id);
+		solve(id, str.insertAt(id, letter));
 		str.printAll();
 	}
 	return 0;
